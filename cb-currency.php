@@ -5,13 +5,16 @@ $datas = json_decode($cbCurrency);
 echo $datas->info;
 $today = $datas->timestamp;
 echo date('d/M/Y',$today);
-//echo $datas->rates->USD;
+
+
+//echo $datas->rates->USD
+
 ?>
 <?php foreach ($datas as $data => $value):?>
 <!-- <li><?//php echo $data; ?></li> -->
 <?php if(is_array($value) || is_object($value)): ?>
 <?php foreach($value as $cid => $rates): ?>
-    <li><?php echo $cid ." = " . $rates; ?></li>
+    <li><?php echo $cid ." = " .$rates; ?></li>
 <?php endforeach; ?>
 <?php endif; ?>
 <?php endforeach; ?>
